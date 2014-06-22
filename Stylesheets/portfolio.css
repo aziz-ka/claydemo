@@ -1,0 +1,49 @@
+header {
+	margin-bottom: 5%;
+}
+.gallery {
+	/*max-width: 800px;*/
+	background-color: #ddd;
+}
+.gallery li {
+	/*border: 1px solid green;*/
+	overflow: hidden;
+	width: 50%;
+	float: left;
+	padding: 1% 0;
+}
+.gallery li a img {
+	max-width: 90%;
+	/*border: 1px solid #777;*/
+	-webkit-transition: .25s;
+	-moz-transition: .25s;
+	transition: .25s;
+}
+.gallery li a img:hover {
+	-webkit-transform: scale(1.1);
+}
+
+.overlay {
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 10;
+}
+.lightbox {
+	display: none;
+}
+.lightbox li a img {
+	max-width: 500px;
+	display: inline-block;
+}
+.lightbox li img:target {
+	display: block;
+}
+footer {
+	clear: both;
+	padding-top: 3%;
+}

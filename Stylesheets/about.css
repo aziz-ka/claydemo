@@ -1,0 +1,37 @@
+header {
+	margin-bottom: 10%;
+}
+h2 {
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 700;
+	font-size: 200%;
+	color: #666;
+}
+.main {
+	float: right;
+	margin: .5% 0 0 3%;
+	border-radius: 2.7em;
+	width: auto;
+}
+article {
+	text-align: justify;
+	font-size: 120%;
+	margin: 3% 0;
+}
+footer {
+	margin-top: 10%;
+}
+
+@media (max-width: 600px) {
+	h2 {
+		font-size: 25px;
+	}
+	.main {
+		width: 100%;
+		margin: 0 0 20px 0;
+	}
+	article {
+		font-size: 15px;
+		/*line-height: 20px;*/
+	}
+}
