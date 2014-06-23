@@ -37,6 +37,9 @@ header ul li a:hover {
 	transition: border-bottom, ease-out, .8s;
 	border-bottom: 2px solid #4bb553;
 }
+.current {
+	color: #444;
+}
 ul {
 	padding: 0;
 }
