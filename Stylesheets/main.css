@@ -7,14 +7,6 @@ body {
 	color: gray;
 }
 .logo {
-/*
-	transform: scaleX(-1);
-	-webkit-transform: scaleX(-1);
-	-moz-transform: scaleX(-1);
-	transition: opacity 1.5s ease;
-	opacity: 0;
-	margin: 0 auto -50px;
-*/
 	float: right;
 	margin: 3% 10% 0 0;
 	width: 10%;
@@ -56,16 +48,30 @@ ul li {
 	position: relative;
 }
 .dropdown {
-	opacity: 0;
-	visibility: hidden;
-	background-color: rgba(255,255,255,0);
+	margin-top: 1.5%;
+	background-color: rgba(255,255,255,1);
 	list-style: none;
 	position: absolute;
 	left: -25%;
+/*	width: 250%;*/
 	text-align: center;
 	z-index: 1;
+	-webkit-box-shadow: 0 1em 3em .5em #fff;
+	-moz-box-shadow: 0 1em 3em .5em #fff;
+	-o-box-shadow: 0 1em 3em .5em #fff;
+	box-shadow: 0 1em 3em .5em #fff;
+	-webkit-transition: opacity, ease-out, .5s;
+	-moz-transition: opacity, ease-out, .5s;
+	-o-transition: opacity, ease-out, .5s;
+	transition: opacity, ease-out, .5s;
+	opacity: 0;
+	visibility: hidden;
 }
 #portfolio:hover ul{
+	-webkit-transition: opacity, ease-out, .5s;
+	-moz-transition: opacity, ease-out, .5s;
+	-o-transition: opacity, ease-out, .5s;
+	transition: opacity, ease-out, .5s;
 	opacity: 1;
 	visibility: visible;
 }
