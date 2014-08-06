@@ -12,14 +12,14 @@ header {
 	float: left;
 	padding: 1% 0;
 }
-.gallery li a img {
+.gallery li img {
 	max-width: 90%;
-	/*border: 1px solid #777;*/
-	-webkit-transition: .25s;
-	-moz-transition: .25s;
-	transition: .25s;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	transition: .5s;
+	cursor: pointer;
 }
-.gallery li a img:hover {
+.gallery li img:hover {
 	-webkit-transform: scale(1.1);
 }
 
@@ -33,15 +33,32 @@ header {
 	background-color: rgba(0,0,0,0.5);
 	z-index: 10;
 }
-.lightbox {
-	display: none;
+.modal {
+	visibility: hidden;
+	position: fixed;
+	border-radius: 10px;
+	z-index: 11;
+	left: 17.5%;
+	top: 50%; 
+	bottom: 50%;
+	margin: auto;
+	width: 65%;
 }
-.lightbox li a img {
-	max-width: 500px;
-	display: inline-block;
+.close, .next, .previous{
+  cursor: pointer;
+  font-size: 32px;
+  position: relative;
+  z-index: 12;
 }
-.lightbox li img:target {
-	display: block;
+.close {
+  float: right;
+  margin-top: -35%;	
+}
+.next {
+	float: right;
+}
+.previous {
+	float: left;
 }
 footer {
 	clear: both;

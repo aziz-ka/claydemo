@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<link href='http://fonts.googleapis.com/css?family=Handlee|Quicksand|Quicksand:700' rel='stylesheet' type='text/css'>
+		<link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
 		<link href="Stylesheets/main.css" rel="stylesheet">
 		<link href="Stylesheets/portfolio.css" rel="stylesheet">
 		<script src="Javascripts/jquery.js"></script>
@@ -9,41 +10,46 @@
 		<title>ClayMeArt</title>
 	</head>
 	<body>
-		<header>
-			<img class="logo" src="/Pictures/Icons/Logo.png">
-			<h1>ClayMeArt</h1>
-			<ul>
-				<li><a href="/index.html">Home</a></li>
-				<li><a href="/about.html">About</a></li>
-				<li id="portfolio"><a href="#">Portfolio</a>
-					<ul class="dropdown">
-						<li><a href="/bouquets.html">Bouquets</a></li>
-						<li><a href="/accessories.html">Accessories</a></li>
-						<li><a href="/favor-boxes.html">Favor Boxes</a></li>
-						<li><a href="/arrangements.html">Arrangements</a></li>
+		<main id="site-wrapper">
+			<header>
+				<a href="#" class="toggle"><i class="fa fa-bars"></i></a>
+				<img class="logo" src="/Pictures/Icons/Logo.png">
+				<h1>ClayMeArt</h1>
+				<nav id="site-menu">
+					<ul>
+						<li><a href="/index.html"><i class="fa fa-home icon"></i>Home</a></li>
+						<li><a href="/about.html"><i class="fa fa-info-circle icon"></i>About</a></li>
+						<li id="portfolio"><a href="#"><i class="fa fa-picture-o icon"></i>Portfolio</a>
+							<ul class="dropdown">
+								<li><a href="/bouquets.html"><i class="fa fa-circle-thin icon"></i>Bouquets</a></li>
+								<li><a href="/accessories.html"><i class="fa fa-circle-thin icon"></i>Accessories</a></li>
+								<li><a href="/favor-boxes.html"><i class="fa fa-circle-thin icon"></i>Favor Boxes</a></li>
+								<li><a href="/arrangements.html"><i class="fa fa-circle-thin icon"></i>Arrangements</a></li>
+							</ul>
+						</li>
+						<li><a href="/contact.html"><i class="fa fa-envelope icon"></i>Contact</a></li>
+						<li><a href="https://squareup.com/market/claymeart" target="_blank"><i class="fa fa-shopping-cart icon"></i>Shop</a></li>
 					</ul>
-					</li>
-					<li><a href="/contact.html">Contact</a></li>
-					<li><a href="https://squareup.com/market/claymeart" target="_blank">Shop</a></li>
-				</ul>
-		</header>
+				</nav>
+			</header>
 
-		<ul class="gallery">
-			<li><a href="#"><img src="/Pictures/Arrangements/_DSC2014.jpg"></a></li>
-			<li><a href="#"><img src="/Pictures/Arrangements/_DSC1687.jpg"></a></li>
-			<li><a href="#"><img src="/Pictures/Arrangements/_DSC1926.jpg"></a></li>
-			<li><a href="#"><img src="/Pictures/Arrangements/_DSC1982.jpg"></a></li>
-			<li><a href="#"><img src="/Pictures/Arrangements/_DSC1916.jpg"></a></li>
-			<li><a href="#"><img src="/Pictures/Arrangements/_DSC1261.jpg"></a></li>
-		</ul>
-
-		<footer>
-			<ul class="social">
-				<li><a href="http://www.facebook.com/ClayMeAnArt"><img class="facebook" src="/Pictures/Icons/facebook_round.png"></a></li>
-				<li><a href="https://plus.google.com/+ClayMeArt/posts"><img class="google" src="/Pictures/Icons/google_round.png"></a></li>
-				<li><a href="http://pinterest.com/claymeart"><img class="pinterest" src="/Pictures/Icons/pinterest_round.png"></a></li>
-				<li><a href="https://twitter.com/share"><img class="tweeter" src="/Pictures/Icons/twitter_round.png"></a></li>
+			<ul class="gallery">
+				<li><a href="#"><img src="/Pictures/Arrangements/_DSC2014.jpg"></a></li>
+				<li><a href="#"><img src="/Pictures/Arrangements/_DSC1687.jpg"></a></li>
+				<li><a href="#"><img src="/Pictures/Arrangements/_DSC1926.jpg"></a></li>
+				<li><a href="#"><img src="/Pictures/Arrangements/_DSC1982.jpg"></a></li>
+				<li><a href="#"><img src="/Pictures/Arrangements/_DSC1916.jpg"></a></li>
+				<li><a href="#"><img src="/Pictures/Arrangements/_DSC1261.jpg"></a></li>
 			</ul>
-		</footer>
+
+			<footer>
+				<ul class="social">
+					<li><a href="http://www.facebook.com/ClayMeAnArt"><img class="facebook" src="/Pictures/Icons/facebook_round.png"></a></li>
+					<li><a href="https://plus.google.com/+ClayMeArt/posts"><img class="google" src="/Pictures/Icons/google_round.png"></a></li>
+					<li><a href="http://pinterest.com/claymeart"><img class="pinterest" src="/Pictures/Icons/pinterest_round.png"></a></li>
+					<li><a href="https://twitter.com/share"><img class="tweeter" src="/Pictures/Icons/twitter_round.png"></a></li>
+				</ul>
+			</footer>
+		</main>
 	</body>
 </html>

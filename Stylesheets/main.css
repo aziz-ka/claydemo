@@ -6,6 +6,9 @@ body {
 	padding: 0 3%;
 	color: gray;
 }
+.fa {
+	display: none;
+}
 .logo {
 	float: right;
 	margin: 3% 10% 0 0;
@@ -19,7 +22,7 @@ h1 {
 	margin: 0 auto;
 }
 header ul li a {
-	margin: 1%;
+/*	margin: 1%;*/
 	color: gray;
 	text-decoration: none;
 	font-size: 170%;
@@ -27,7 +30,7 @@ header ul li a {
 	-moz-transition: border-bottom, ease-out;
 	-o-transition: border-bottom, ease-out;
 	transition: border-bottom, ease-out;
-	border-bottom: 2px solid rgba(255,255,255,0);
+	border-bottom: 1px dotted rgba(255,255,255,0);
 }
 header ul li a:hover {
 	color: #444;
@@ -35,7 +38,7 @@ header ul li a:hover {
 	-moz-transition: border-bottom, ease-out, .8s;
 	-o-transition: border-bottom, ease-out, .8s;
 	transition: border-bottom, ease-out, .8s;
-	border-bottom: 2px solid #4bb553;
+	border-bottom: 1px dotted #4bb553;
 }
 .current {
 	color: #444;
@@ -114,21 +117,14 @@ ul li {
 
 @media (max-width: 600px) {
 	body {
-		padding: 0 20px;
+		padding: 0;
 	}
-	.logo {
-		margin: 60px auto 0;
-		width: 80px;
-		position: relative;
-		display: block;
-		float: none;
-	}
-	h1 {
-		font-size: 45px;
-		margin-bottom: 30px;
+	.fa {
+		display: inline-block;
 	}
 	header {
-		margin: -50px auto 50px;
+	/*margin: -50px auto 50px;*/
+	/*background-color: pink;*/
 	}
 	header ul {
 		margin: -10px auto;
@@ -137,7 +133,116 @@ ul li {
 		display: block;
 		margin: 10px 0;
 	}
-	.social li a img {
-    margin: 0 auto;
+	.toggle {
+		float: left;
+		/*margin-top: .3%;*/
+		line-height: 1.45em;
+		font-size: 2.5em;
+		color: inherit;
 	}
+	.logo {
+		margin: 10px 0 0 0;
+		width: 10%;
+		display: none;
+	}
+	h1 {
+		font-size: 250%;
+		margin-bottom: 30px;
+		/*text-align: right;*/
+	}
+	.social li a img {
+		width: 10%;
+	}
+
+	main {
+		padding: 2% 3%;
+	}
+	nav {
+		width: 60%;
+		position: absolute;
+		left: -60%;
+		top: 0;
+		height: 100%;
+		background: #ddd;
+	}
+	nav ul {
+		border-top: 1px solid #ccc;
+	}
+	nav ul li {
+		width: 100%;
+		text-align: left;
+		padding: .5em 1em;
+		box-sizing: border-box;
+		border-bottom: 1px solid #ccc;
+	}
+	nav ul li a:hover {
+		border: none;
+	}
+	.icon {
+		width: 15%;
+		margin-right: 5%;
+	}
+
+	#portfolio {
+		padding: .5em 0 0;
+	}
+	#portfolio > a {
+		padding-left: .6em;
+	}
+	#portfolio > a > i {
+		/*margin-right: 2%;*/
+		width: 13%;
+	}
+	.dropdown {
+		font-size: 80%;
+		margin-top: inherit;
+		background-color: inherit;
+		position: inherit;
+		left: inherit;
+		width: inherit;
+		text-indent: 1em;
+		text-align: inherit;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		-o-box-shadow: none;
+		box-shadow: none;
+		opacity: 1;
+		visibility: visible;
+	}
+	.dropdown li {
+		line-height: 2.8em;
+	}
+	.dropdown li:last-child {
+		border: none;
+	}
+	.dropdown li i {
+		margin-right: 3%;
+		font-size: .5em;
+		vertical-align: middle;
+	}
+
+	.openNav main {
+    left: 0;
+    -webkit-transform: translate3d(60%, 0, 0);
+    -moz-transform: translate3d(60%, 0, 0);
+    -ms-transform: translate3d(60%, 0, 0);
+    -o-transform: translate3d(60%, 0, 0);
+    transform: translate3d(60%, 0, 0);
+    -webkit-transition: -webkit-transform 500ms ease;
+    -moz-transition: -moz-transform 500ms ease;
+    -o-transition: -o-transform 500ms ease;
+    transition: transform 500ms ease;
+  }
+  main {
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 500ms ease;
+    -moz-transition: -moz-transform 500ms ease;
+    -o-transition: -o-transform 500ms ease;
+    transition: transform 500ms ease;
+  }
 }
