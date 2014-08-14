@@ -54,4 +54,12 @@ $(function() {
 			$(".toggle").css("color", "#444");
 		}
 	})
+	
+	$(window).resize(function() {
+		csslider();
+	})
 })
+
+var csslider = function() {
+	$(".csslider > ul").height($(".csslider > ul > li > img").height());
+}
