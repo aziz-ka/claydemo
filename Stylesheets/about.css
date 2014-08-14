@@ -16,7 +16,7 @@ h2 {
 .main {
 	float: right;
 	margin: .5% 0 0 3%;
-	border-radius: 2.7em;
+	border-radius: 1.8em;
 	width: auto;
 }
 article {
@@ -37,7 +37,6 @@ footer {
 		margin: 0 0 20px 0;
 	}
 	article {
-		font-size: 15px;
-		/*line-height: 20px;*/
+		font-size: 150%;
 	}
 }

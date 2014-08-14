@@ -123,8 +123,7 @@ ul li {
 		display: inline-block;
 	}
 	header {
-	/*margin: -50px auto 50px;*/
-	/*background-color: pink;*/
+/*		background-color: pink;*/
 	}
 	header ul {
 		margin: -10px auto;
@@ -136,8 +135,8 @@ ul li {
 	.toggle {
 		float: left;
 		/*margin-top: .3%;*/
-		line-height: 1.45em;
-		font-size: 2.5em;
+		line-height: 2.18em;
+		font-size: 2em;
 		color: inherit;
 	}
 	.logo {
@@ -146,34 +145,34 @@ ul li {
 		display: none;
 	}
 	h1 {
-		font-size: 250%;
+		font-size: 300%;
 		margin-bottom: 30px;
 		/*text-align: right;*/
 	}
 	.social li a img {
-		width: 10%;
+		width: 12%;
 	}
 
 	main {
 		padding: 2% 3%;
 	}
 	nav {
-		width: 60%;
+		width: 65%;
 		position: absolute;
-		left: -60%;
+		left: -65%;
 		top: 0;
 		height: 100%;
-		background: #ddd;
+		background: #efefef;
 	}
 	nav ul {
-		border-top: 1px solid #ccc;
+		border-top: 1px solid #ddd;
 	}
 	nav ul li {
 		width: 100%;
 		text-align: left;
 		padding: .5em 1em;
 		box-sizing: border-box;
-		border-bottom: 1px solid #ccc;
+		border-bottom: 1px solid #ddd;
 	}
 	nav ul li a:hover {
 		border: none;
@@ -223,11 +222,11 @@ ul li {
 
 	.openNav main {
     left: 0;
-    -webkit-transform: translate3d(60%, 0, 0);
-    -moz-transform: translate3d(60%, 0, 0);
-    -ms-transform: translate3d(60%, 0, 0);
-    -o-transform: translate3d(60%, 0, 0);
-    transform: translate3d(60%, 0, 0);
+    -webkit-transform: translate3d(65%, 0, 0);
+    -moz-transform: translate3d(65%, 0, 0);
+    -ms-transform: translate3d(65%, 0, 0);
+    -o-transform: translate3d(65%, 0, 0);
+    transform: translate3d(65%, 0, 0);
     -webkit-transition: -webkit-transform 500ms ease;
     -moz-transition: -moz-transform 500ms ease;
     -o-transition: -o-transform 500ms ease;
