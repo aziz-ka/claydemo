@@ -54,7 +54,7 @@ input[type="submit"]:hover {
 
 @media (max-width: 600px) {
 	article {
-			font-size: 15px;
+			font-size: 125%;
 	}
 	form {
 			margin: 40px auto;

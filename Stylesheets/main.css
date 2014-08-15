@@ -1,3 +1,6 @@
+html, body {
+	height: 100%;
+}
 body {
 	text-align: center;
 	font-family: 'Quicksand', sans-serif;
@@ -5,6 +8,12 @@ body {
 	margin: 0 auto;
 	padding: 0 3%;
 	color: gray;
+}
+body:before {
+	content:"";
+	width: 0;
+	height:90%;
+	float:left;
 }
 .fa {
 	display: none;
@@ -114,6 +123,16 @@ ul li {
 .tweeter:hover {
 	background-color: #55AAEE;
 }
+.social {
+/*	margin: 0;*/
+}
+footer {
+/*		position: relative;*/
+	clear: both;
+	margin-top: 5%;
+/*		bottom: 0;*/
+/*		padding: 0;*/
+}
 
 @media (max-width: 600px) {
 	body {
@@ -153,9 +172,6 @@ ul li {
 		width: 12%;
 	}
 
-	main {
-		padding: 2% 3%;
-	}
 	nav {
 		width: 65%;
 		position: absolute;
@@ -234,7 +250,8 @@ ul li {
   }
   main {
     left: 0;
-		min-height: 525px;
+		height: 100%;
+		padding: 0 3%;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
@@ -245,8 +262,4 @@ ul li {
     -o-transition: -o-transform 500ms ease;
     transition: transform 500ms ease;
   }
-	footer {
-		position: relative;
-/*		bottom: -210px;*/
-	}
 }
