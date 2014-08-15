@@ -1,5 +1,5 @@
 header {
-	margin-bottom: 10%;
+/*	margin-bottom: 8%;*/
 }
 .dropdown {
 /*
@@ -22,10 +22,10 @@ h2 {
 article {
 	text-align: justify;
 	font-size: 120%;
-	margin: 3% 0;
+/*	margin: 3% 0;*/
 }
 footer {
-	margin-top: 10%;
+/*	margin-top: 8%;*/
 }
 
 @media (max-width: 600px) {

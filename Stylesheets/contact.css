@@ -1,7 +1,7 @@
 article {
 	font-size: 120%;
 	text-align: justify;
-	margin: 8% auto;
+	margin-bottom: 8%;
 }
 article a {
 	text-decoration: none;
@@ -9,14 +9,14 @@ article a {
 	border-bottom: 1px dotted #4bb553;
 }
 form {
-	margin-bottom: 8%;
+/*	margin-bottom: 8%;*/
 }
 input {
 	width: 50%;
 }
 input, textarea {
 	padding: 1%;
-	margin: 3% auto;
+	margin: 3% auto 0;
 	font-size: 100%;
 	display: block;
 	border-radius: .3em;
@@ -54,12 +54,18 @@ input[type="submit"]:hover {
 
 @media (max-width: 600px) {
 	article {
-			font-size: 125%;
+		font-size: 125%;
+		margin-bottom: 15%;
 	}
 	form {
-			margin: 40px auto;
+/*			margin: 40px auto;*/
 	}
 	input, textarea {
-			width: 250px;
+		width: 90%;
+		padding: 2% 1%;
+		font-size: 120%;
+	}
+	input[type="submit"] {
+		width: 25%;
 	}
 }

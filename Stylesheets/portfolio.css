@@ -1,5 +1,5 @@
 header {
-	margin-bottom: 5%;
+	margin-bottom: 7%;
 }
 .gallery {
 	/*max-width: 800px;*/
@@ -62,7 +62,7 @@ header {
 }
 footer {
 	clear: both;
-	padding-top: 3%;
+	padding-top: 5%;
 }
 
 @media (max-width: 600px) {
@@ -72,5 +72,9 @@ footer {
 	}
 	.gallery li img {
 		max-width: 100%;
+	}
+	footer {
+		padding-top: 0;
+		margin-top: 10%;
 	}
 }
