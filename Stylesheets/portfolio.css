@@ -3,7 +3,7 @@ header {
 }
 .gallery {
 	/*max-width: 800px;*/
-	background-color: #ddd;
+/*	background-color: #ddd;*/
 }
 .gallery li {
 	/*border: 1px solid green;*/
@@ -63,4 +63,14 @@ header {
 footer {
 	clear: both;
 	padding-top: 3%;
+}
+
+@media (max-width: 600px) {
+	.gallery li {
+		float: none;
+		width: 100%;
+	}
+	.gallery li img {
+		max-width: 100%;
+	}
 }
