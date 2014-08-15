@@ -58,8 +58,7 @@ $(function() {
 	$(window).resize(function() {
 		csslider();
 	})
+	var csslider = function() {
+		$(".csslider > ul").height($(".csslider > ul > li > img").height());
+	}
 })
-
-var csslider = function() {
-	$(".csslider > ul").height($(".csslider > ul > li > img").height());
-}

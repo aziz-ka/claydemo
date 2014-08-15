@@ -26,6 +26,7 @@ input, textarea {
 	transition: border, ease-out;
 	border: 1px solid #e8e8e8;
 	background-color: #f1f1f1;
+	background-image: none;
 	font-family: 'Quicksand', sans-serif;
 }
 input:hover, input:focus, textarea:hover, textarea:focus {
