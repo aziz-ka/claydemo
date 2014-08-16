@@ -20,6 +20,7 @@ input, textarea {
 	font-size: 100%;
 	display: block;
 	border-radius: .3em;
+	-webkit-appearance: none;
 	-webkit-transition: border, ease-out;
 	-moz-transition: border, ease-out;
 	-o-transition: border, ease-out;

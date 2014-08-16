@@ -16,11 +16,16 @@ header {
 	max-width: 90%;
 	-webkit-transition: .5s;
 	-moz-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
 	transition: .5s;
 	cursor: pointer;
 }
 .gallery li img:hover {
 	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 .overlay {
@@ -39,7 +44,7 @@ header {
 	border-radius: 10px;
 	z-index: 11;
 	left: 17.5%;
-	top: 50%; 
+	top: 50%;
 	bottom: 50%;
 	margin: auto;
 	width: 65%;
@@ -76,5 +81,11 @@ footer {
 	footer {
 		padding-top: 0;
 		margin-top: 10%;
+	}
+	.gallery li img:hover {
+		-webkit-transform: none;
+		-moz-transform: none;
+		-o-transform: none;
+		transform: none;
 	}
 }
