@@ -4,7 +4,44 @@ $(function() {
 		if(url == this.href) {
 			$(this).addClass("current");
 		}
-	});
+	})
+	$(document).ready(function() {
+		csslider();
+		resizeDropdown();
+	})
+	$(window).resize(function() {
+		csslider();
+		resizeDropdown();
+	})
+	
+	var csslider = function() {
+		$(".csslider > ul").height($(".csslider > ul > li > img").height());
+	}
+	
+	var resizeDropdown = function() {
+		if($(window).width() > 600) {
+			var left = Math.floor($("body").width() / -2.53);
+			$(".dropdown").width($("body").width()).css("left", left);
+			console.log($(".dropdown").width());
+			console.log(left);
+		} else {
+			$(".dropdown").css("left", "inherit").css("width", "inherit");
+		}
+	}
+	$("#portfolio").mouseover(function() {
+		resizeDropdown();
+	})
+	
+	$(".toggle").click(function(e) {
+		e.preventDefault();
+		if ($("html").hasClass("openNav")) {
+			$("html").removeClass("openNav");
+			$(".toggle").css("color", "inherit");
+		} else {
+  		$("html").addClass("openNav");
+			$(".toggle").css("color", "#444");
+		}
+	})
 	
 	var hoverme = $(".gallery li img");
 	// hoverme.hover(function() {
@@ -43,22 +80,4 @@ $(function() {
 		$(hoverme).removeClass("modal");
 		$(".modal, .overlay").css("visibility", "hidden");
 	})
-	
-	$(".toggle").click(function(e) {
-		e.preventDefault();
-		if ($("html").hasClass("openNav")) {
-			$("html").removeClass("openNav");
-			$(".toggle").css("color", "inherit");
-		} else {
-  		$("html").addClass("openNav");
-			$(".toggle").css("color", "#444");
-		}
-	})
-	
-	$(window).resize(function() {
-		csslider();
-	})
-	var csslider = function() {
-		$(".csslider > ul").height($(".csslider > ul > li > img").height());
-	}
 })
