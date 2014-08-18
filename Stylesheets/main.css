@@ -100,7 +100,7 @@ ul li {
 	line-height: 150%;
 }
 .social li a img {
-	width: 5%;
+	width: 40px;
 	margin: auto 1%;
 	border-radius: 50%;
 	-webkit-transition: opacity, ease-out;

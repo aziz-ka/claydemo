@@ -6,7 +6,7 @@ $(function() {
 		}
 	})
 	$(document).ready(function() {
-		csslider();
+//		csslider();
 		resizeDropdown();
 	})
 	$(window).resize(function() {
@@ -17,6 +17,21 @@ $(function() {
 	var csslider = function() {
 		$(".csslider > ul").height($(".csslider > ul > li > img").height());
 	}
+	
+	var count = 0;
+	
+	var changeSlide = function() {
+		count += 1;
+		var el = $(".csslider input:nth-of-type("+count+")");
+		$(el).next().click();
+		if(count == $(".csslider input").length) {
+			$(".csslider input:nth-of-type(1)").click();
+			count = 0;
+		}
+		console.log(count);
+	}
+	
+	setInterval(changeSlide, 5000);
 	
 	var resizeDropdown = function() {
 		if($(window).width() > 600) {
@@ -30,6 +45,9 @@ $(function() {
 	}
 	$("#portfolio").mouseover(function() {
 		resizeDropdown();
+	})
+	$("#portfolio > a").click(function(e) {
+		e.preventDefault();
 	})
 	
 	$(".toggle").click(function(e) {
@@ -52,10 +70,12 @@ $(function() {
 	// 	$(this).css("-webkit-filter", "blur(0)");
 	// });
 	hoverme.click(function() {
-		that = this;
-		var imageURI = $(this).attr("src");
-		$(".largeImage").attr({src: imageURI}).addClass("modal");
-		$(".modal, .overlay").css("visibility", "visible");
+		if($(window).width() > 600) {
+			that = this;
+			var imageURI = $(this).attr("src");
+			$(".largeImage").attr({src: imageURI}).addClass("modal");
+			$(".modal, .overlay").css("visibility", "visible");
+		}
 	})
 
 	// var numOfClicks = 0;
@@ -76,6 +96,7 @@ $(function() {
 		}
 		console.log(that);
 	})
+	
 	$(".overlay, .close").click(function() {
 		$(hoverme).removeClass("modal");
 		$(".modal, .overlay").css("visibility", "hidden");
