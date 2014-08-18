@@ -221,7 +221,7 @@
   top: 50%;
   margin-left: -6px;
   margin-top: -6px;
-  background: #71ad37;
+  background: #4bb553;
   border-radius: 50%;
   padding: 6px;
   opacity: 0;
@@ -270,7 +270,7 @@
   cursor: pointer;
 }
 .csslider > .arrows label:hover {
-  box-shadow: inset 2px -2px 0 1px #71ad37;
+  box-shadow: inset 2px -2px 0 1px #4bb553;
 /*  margin: 0;*/
 }
 .csslider > .arrows label:before {
