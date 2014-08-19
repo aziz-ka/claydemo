@@ -49,15 +49,20 @@ header {
 	margin: auto;
 	width: 65%;
 }
-.close, .next, .previous{
+.close, .next, .previous {
   cursor: pointer;
-  font-size: 32px;
+  font-size: 200%;
   position: relative;
   z-index: 12;
+	margin-top: -3%;
+	color: #bbb;
+}
+.modal div:hover {
+	color: #4b9f53;
 }
 .close {
   float: right;
-  margin-top: -35%;	
+  margin-top: -34%;
 }
 .next {
 	float: right;

@@ -28,7 +28,6 @@ $(function() {
 			$(".csslider input:nth-of-type(1)").click();
 			count = 0;
 		}
-		console.log(count);
 	}
 	
 	setInterval(changeSlide, 5000);
@@ -37,8 +36,6 @@ $(function() {
 		if($(window).width() > 600) {
 			var left = Math.floor($("body").width() / -2.53);
 			$(".dropdown").width($("body").width()).css("left", left);
-			console.log($(".dropdown").width());
-			console.log(left);
 		} else {
 			$(".dropdown").css("left", "inherit").css("width", "inherit");
 		}
@@ -77,6 +74,11 @@ $(function() {
 			$(".modal, .overlay").css("visibility", "visible");
 		}
 	})
+	
+	$(".overlay, .close").click(function() {
+		$(hoverme).removeClass("modal");
+		$(".modal, .overlay").css("visibility", "hidden");
+	})
 
 	// var numOfClicks = 0;
 	// $(".next").click(function() {
@@ -94,11 +96,18 @@ $(function() {
 		if (count === hoverme.length - 1) {
 			$(".largeImage").attr("src", $(hoverme[0]).attr('src'));
 		}
-		console.log(that);
+//		console.log(that);
 	})
-	
-	$(".overlay, .close").click(function() {
-		$(hoverme).removeClass("modal");
-		$(".modal, .overlay").css("visibility", "hidden");
+
+	$(".previous").click(function() {
+		// debugger
+		var count = hoverme.index(that);
+		if (count < hoverme.length) {
+			$(".largeImage").attr("src", $(hoverme[count - 1]).attr('src'));
+		}
+		if (count === 0) {
+			$(".largeImage").attr("src", $(hoverme[hoverme.length - 1]).attr('src'));
+		}
+//		console.log(that);
 	})
 })

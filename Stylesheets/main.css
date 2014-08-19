@@ -19,7 +19,7 @@ body:before {
 	height: 90%;
 	float: left;
 }
-.fa {
+.icon, .toggle {
 	display: none;
 }
 header {
@@ -153,11 +153,13 @@ footer {
 		margin: 10px 0;
 	}
 	.toggle {
+		display: inherit;
 		float: left;
 		/*margin-top: .3%;*/
 		line-height: 2.18em;
 		font-size: 2em;
 		color: inherit;
+		cursor: pointer;
 	}
 	.logo {
 		margin: 10px 0 0 0;
