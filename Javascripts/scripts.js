@@ -32,6 +32,13 @@ $(function() {
 	
 	setInterval(changeSlide, 5000);
 	
+//	var image = $(".csslider > ul > li");
+//	var swipe = new Hammer(image);
+//	
+//	swipe.on("panleft panright tap press", function(ev) {
+//    alert("hi");
+//	});
+	
 	var resizeDropdown = function() {
 		if($(window).width() > 600) {
 			var left = Math.floor($("body").width() / -2.53);

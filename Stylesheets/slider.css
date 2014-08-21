@@ -209,7 +209,7 @@
   border-radius: 50%;
   margin: 0 5px;
   padding: 5px;
-  background: #ccc;
+  background: #ddd;
 }
 .csslider > .navigation label:hover:after {
   opacity: 1;
@@ -266,7 +266,7 @@
 /*  top: -50%;*/
   padding: 3%;
 	margin: 0 -3%;
-  box-shadow: inset 2px -2px 0 1px #aaa;
+  box-shadow: inset 2px -2px 0 1px #ddd;
   cursor: pointer;
 }
 .csslider > .arrows label:hover {

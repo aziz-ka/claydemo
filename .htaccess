@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+
+   #this page will be loaded by default (landing page)
+   DirectoryIndex home.html
+
+   #cache control
+   <FilesMatch “\.(ico|jpg|jpeg|png|pdf|gif|js|css|swf)$">
+      Header set Cache-Control "max-age=31104000, public, must-revalidate“
+   </FilesMatch>
+
+   #example.com/page will display the contents of example.com/page.html
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteCond %{REQUEST_FILENAME}.html -f
+   RewriteRule ^(.+)$ $1.html [L,QSA]
+
+   #301 from example.com/page.html to example.com/page
+   RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
+   RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+</IfModule>

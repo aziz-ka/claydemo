@@ -6,7 +6,7 @@ body {
 	font-family: 'Quicksand', sans-serif;
 	max-width: 800px;
 	margin: 0 auto;
-	color: gray;
+	color: #777;
 }
 main {
 	padding: 0 3%;
@@ -25,21 +25,24 @@ body:before {
 header {
 	margin-bottom: 10%;
 }
+nav > ul {
+	margin: 0;
+}
 .logo {
 	float: right;
-	margin: 3% 10% 0 0;
+	margin: 5% 10% 0 0;
 	width: 5em;
 }
 h1 {
-	font-size: 500%;
-	font-family: 'Satisfy', cursive;
+	font-size: 350%;
+	font-family: 'Miama', cursive;
 	letter-spacing: .2em;
 	color: #666;
 	margin: 0 auto;
 }
 header ul li a {
-	margin: 2%;
-	color: gray;
+	margin: 1.5%;
+	color: #777;
 	text-decoration: none;
 	font-size: 170%;
 	-webkit-transition: border-bottom, ease-out;
