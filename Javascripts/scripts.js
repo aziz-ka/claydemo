@@ -1,7 +1,7 @@
 $(function() {
 	var url = window.location.href;
 	$("header ul li a").each(function() {
-		if(url == this.href) {
+		if(url + ".html" == this.href) {
 			$(this).addClass("current");
 		}
 	})
