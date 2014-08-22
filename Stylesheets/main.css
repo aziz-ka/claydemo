@@ -30,15 +30,16 @@ nav > ul {
 }
 .logo {
 	float: right;
-	margin: 5% 10% 0 0;
+	margin: 50px 11% 0 0;
 	width: 5em;
 }
 h1 {
-	font-size: 350%;
+	font-size: 400%;
 	font-family: 'Miama', cursive;
-	letter-spacing: .2em;
+	letter-spacing: .1em;
 	color: #666;
-	margin: 0 auto;
+	margin: -2% auto;
+/*	border: 1px solid red;*/
 }
 header ul li a {
 	margin: 1.5%;
@@ -138,6 +139,28 @@ footer {
 /*		padding: 0;*/
 }
 
+@media (max-width: 800px) {
+	.logo {
+		margin-right: 8%;
+	}
+}
+
+@media (max-width: 700px) {
+	.logo {
+		margin-right: 5%;
+	}
+}
+
+@media (max-width: 650px) {
+	h1 {
+		font-size: 350%;
+	}
+	.logo {
+		margin-right: 7%;
+		width: 4em;
+	}
+}
+
 @media (max-width: 600px) {
 	body {
 		padding: 0;
@@ -159,7 +182,7 @@ footer {
 		display: inherit;
 		float: left;
 		/*margin-top: .3%;*/
-		line-height: 2.18em;
+		line-height: 3.2em;
 		font-size: 2em;
 		color: inherit;
 		cursor: pointer;
@@ -171,9 +194,10 @@ footer {
 	}
 	h1 {
 		font-size: 300%;
-/*		margin-bottom: 30px;*/
 		text-align: right;
-		line-height: 150%;
+		line-height: 270%;
+		margin-top: 0;
+		margin-bottom: -5%;
 	}
 	.social li a img {
 		width: 10%;
@@ -275,13 +299,14 @@ footer {
 		margin-top: 11%;
 	}
 }
+
 @media (max-width: 400px) {
 	h1 {
 		font-size: 225%;
-		line-height: 180%;
+/*		line-height: 270%;*/
 	}
 	.toggle {
-		line-height: 1.75em;
+		line-height: 2.5em;
 	}
 	nav {
 		width: 75%;
