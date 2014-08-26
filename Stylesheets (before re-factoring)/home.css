@@ -16,3 +16,13 @@
 	100% {opacity: 1;
 		width: 70px;}
 }
+footer {
+/*	margin-top: 7%;*/
+}
+
+@media (max-width: 600px) {
+}
+@media (max-width: 450px) {
+}
+@media (max-width: 300px) {
+}

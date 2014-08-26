@@ -1,7 +1,12 @@
 header {
 	margin-bottom: 7%;
 }
+.gallery {
+	/*max-width: 800px;*/
+/*	background-color: #ddd;*/
+}
 .gallery li {
+	/*border: 1px solid green;*/
 	overflow: hidden;
 	width: 50%;
 	float: left;

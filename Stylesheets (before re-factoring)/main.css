@@ -10,6 +10,8 @@ body {
 }
 main {
 	padding: 0 3%;
+/*	height: 100%;*/
+/*	border: 1px solid blue;*/
 }
 body:before {
 	content: "";
@@ -37,6 +39,7 @@ h1 {
 	letter-spacing: .1em;
 	color: #666;
 	margin: -2% auto;
+/*	border: 1px solid red;*/
 }
 header ul li a {
 	margin: 1.5%;
@@ -129,8 +132,11 @@ ul li {
 	margin: 0;
 }
 footer {
+/*		position: relative;*/
 	clear: both;
 	margin: 8% auto 0;
+/*		bottom: 0;*/
+/*		padding: 0;*/
 }
 
 @media (max-width: 800px) {
@@ -161,6 +167,9 @@ footer {
 	}
 	.fa {
 		display: inline-block;
+	}
+	header {
+/*		background-color: pink;*/
 	}
 	header ul {
 		margin: -10px auto;
@@ -229,6 +238,7 @@ footer {
 		padding-left: .6em;
 	}
 	#portfolio > a > i {
+		/*margin-right: 2%;*/
 		width: 13%;
 	}
 	.dropdown {
@@ -273,6 +283,8 @@ footer {
   }
   main {
     left: 0;
+/*		height: 100%;*/
+/*		padding: 0 3%;*/
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);

@@ -1,21 +1,46 @@
-<IfModule mod_rewrite.c>
+# gzip compression
+<ifModule mod_gzip.c>
+   mod_gzip_on Yes
+   mod_gzip_dechunk Yes
+   mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+   mod_gzip_item_include handler ^cgi-script$
+   mod_gzip_item_include mime ^text/.*
+   mod_gzip_item_include mime ^application/x-javascript.*
+   mod_gzip_item_exclude mime ^image/.*
+   mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+
+# cache control
+<ifModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault A604800
+</ifModule>
+
+<ifModule mod_headers.c>
+  <filesMatch "\.(ico|pdf|jpg|jpeg|png|gif|txt)$">
+    Header set Cache-Control "max-age=2592000, public"
+  </filesMatch>
+  <filesMatch "\.(css|js|xml)$">
+    Header set Cache-Control "max-age=604800, public"
+  </filesMatch>
+  <filesMatch "\.(html|php)$">
+    Header set Cache-Control "max-age=604800, private"
+  </filesMatch>
+</ifModule>
+
+<ifModule mod_rewrite.c>
    RewriteEngine On
 
-   #this page will be loaded by default (landing page)
+   # this page will be loaded by default (landing page)
    DirectoryIndex home.html
 
-   #cache control
-   <FilesMatch “\.(ico|jpg|jpeg|png|pdf|gif|js|css|swf)$">
-      Header set Cache-Control "max-age=31104000, public, must-revalidate“
-   </FilesMatch>
-
-   #example.com/page will display the contents of example.com/page.html
+   # example.com/page will display the contents of example.com/page.html
    RewriteCond %{REQUEST_FILENAME} !-f
    RewriteCond %{REQUEST_FILENAME} !-d
    RewriteCond %{REQUEST_FILENAME}.html -f
    RewriteRule ^(.+)$ $1.html [L,QSA]
 
-   #301 from example.com/page.html to example.com/page
+   # 301 from example.com/page.html to example.com/page
    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
    RewriteRule ^(.*)\.html$ /$1 [R=301,L]
-</IfModule>
+</ifModule>
