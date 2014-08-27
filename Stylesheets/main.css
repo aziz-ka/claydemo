@@ -172,8 +172,7 @@ footer {
 	.toggle {
 		display: inherit;
 		float: left;
-		/*margin-top: .3%;*/
-		line-height: 3.2em;
+		margin-top: 40px;
 		font-size: 2em;
 		color: inherit;
 		cursor: pointer;
@@ -294,7 +293,7 @@ footer {
 /*		line-height: 270%;*/
 	}
 	.toggle {
-		line-height: 2.5em;
+		margin-top: 25px;
 	}
 	nav {
 		width: 75%;

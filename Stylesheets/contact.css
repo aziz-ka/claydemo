@@ -52,7 +52,7 @@ input[type="submit"]:hover {
 
 @media (max-width: 600px) {
 	article {
-		font-size: 125%;
+		font-size: 110%;
 		margin-bottom: 15%;
 	}
 	input, textarea {
