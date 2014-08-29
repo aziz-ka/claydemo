@@ -220,6 +220,30 @@ footer {
 		margin-right: 5%;
 		color: #4b9f53;
 	}
+	.openNav main {
+    left: 0;
+    -webkit-transform: translate3d(65%, 0, 0);
+    -moz-transform: translate3d(65%, 0, 0);
+    -ms-transform: translate3d(65%, 0, 0);
+    -o-transform: translate3d(65%, 0, 0);
+    transform: translate3d(65%, 0, 0);
+    -webkit-transition: -webkit-transform 500ms ease;
+    -moz-transition: -moz-transform 500ms ease;
+    -o-transition: -o-transform 500ms ease;
+    transition: transform 500ms ease;
+  }
+  main {
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 500ms ease;
+    -moz-transition: -moz-transform 500ms ease;
+    -o-transition: -o-transform 500ms ease;
+    transition: transform 500ms ease;
+  }
 
 	#portfolio {
 		padding: .3em 0 0;
@@ -258,30 +282,6 @@ footer {
 		vertical-align: middle;
 	}
 
-	.openNav main {
-    left: 0;
-    -webkit-transform: translate3d(65%, 0, 0);
-    -moz-transform: translate3d(65%, 0, 0);
-    -ms-transform: translate3d(65%, 0, 0);
-    -o-transform: translate3d(65%, 0, 0);
-    transform: translate3d(65%, 0, 0);
-    -webkit-transition: -webkit-transform 500ms ease;
-    -moz-transition: -moz-transform 500ms ease;
-    -o-transition: -o-transform 500ms ease;
-    transition: transform 500ms ease;
-  }
-  main {
-    left: 0;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-transition: -webkit-transform 500ms ease;
-    -moz-transition: -moz-transform 500ms ease;
-    -o-transition: -o-transform 500ms ease;
-    transition: transform 500ms ease;
-  }
 	footer {
 		margin-top: 11%;
 	}
@@ -301,10 +301,10 @@ footer {
 	}
 	.openNav main {
     left: 0;
-    -webkit-transform: translate3d(75%, 0, 0);
+    /*-webkit-transform: translate3d(75%, 0, 0);
     -moz-transform: translate3d(75%, 0, 0);
     -ms-transform: translate3d(75%, 0, 0);
-    -o-transform: translate3d(75%, 0, 0);
+    -o-transform: translate3d(75%, 0, 0);*/
     transform: translate3d(75%, 0, 0);
 	}
 	.social li a img {
