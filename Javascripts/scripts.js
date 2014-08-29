@@ -20,10 +20,10 @@ $(function() {
 
 	var openSideNav = function() {
 		if ($("html").hasClass("openNav")) {
-			$("html").removeClass("openNav").css("overflow", "hidden");
+			$("html").removeClass("openNav").css("overflow", "visible");
 			$(".toggle").css("color", "inherit");
 		} else {
-  		$("html").addClass("openNav");
+  		$("html").addClass("openNav").css("overflow", "hidden");
 			$(".toggle").css("color", "#444");
 		}
 	}
@@ -81,6 +81,12 @@ $(function() {
 		e.preventDefault();
 		// touchToOpenSideNav();
 		openSideNav();
+	})
+	$("main").on("touchend", function(e) {
+		e.preventDefault();
+		if($("html").hasClass("openNav")) {
+			// openSideNav();
+		}
 	})
 
 	var slideNav = function() {
