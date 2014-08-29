@@ -20,13 +20,25 @@ $(function() {
 
 	var openSideNav = function() {
 		if ($("html").hasClass("openNav")) {
-			$("html").removeClass("openNav").css("overflow", "visible");
+			$("html").removeClass("openNav");
 			$(".toggle").css("color", "inherit");
 		} else {
-  		$("html").addClass("openNav").css("overflow", "hidden");
+  		$("html").addClass("openNav");
 			$(".toggle").css("color", "#444");
 		}
 	}
+
+	$(".toggle").on("touchend", function(e) {
+		e.preventDefault();
+		// touchToOpenSideNav();
+		openSideNav();
+	})
+	$("main").on("touchend", function(e) {
+		e.preventDefault();
+		if($("html").hasClass("openNav")) {
+			// openSideNav();
+		}
+	})
 
 	// var touchToOpenSideNav = function() {
 	// 	if ($("body").hasClass("opened")) {
@@ -77,25 +89,13 @@ $(function() {
 	// 	console.log(distance);
 	// })
 
-	$(".toggle").on("touchend", function(e) {
-		e.preventDefault();
-		// touchToOpenSideNav();
-		openSideNav();
-	})
-	$("main").on("touchend", function(e) {
-		e.preventDefault();
-		if($("html").hasClass("openNav")) {
-			// openSideNav();
-		}
-	})
-
-	var slideNav = function() {
-		if(distance <= 75 || distance >= -75) {
-			return distance;
-		} else {
-			return 75;
-		}
-	}
+	// var slideNav = function() {
+	// 	if(distance <= 75 || distance >= -75) {
+	// 		return distance;
+	// 	} else {
+	// 		return 75;
+	// 	}
+	// }
 	
 	var resizeDropdown = function() {
 		if($(window).width() > 600) {
