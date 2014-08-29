@@ -28,58 +28,59 @@ $(function() {
 		}
 	}
 
-	var touchToOpenSideNav = function() {
-		if ($("body").hasClass("opened")) {
-			$("body").removeClass("opened").css("-webkit-transform", "translate3d(0, 0, 0)")
-																		.css("-moz-transform", "translate3d(0, 0, 0)")
-																		.css("-o-transform", "translate3d(0, 0, 0)")
-																		.css("transform", "translate3d(0, 0, 0)")
-																		.css("-webkit-transition", "-webkit-transform 500ms ease")
-																		.css("-moz-transition", "-moz-transform 500ms ease")
-																		.css("-o-transition", "-o-transform 500ms ease")
-																		.css("transition", "transform 500ms ease;");
-			$(".toggle").css("color", "inherit");
-		} else {
-  		$("body").addClass("opened").css("-webkit-transform", "translate3d(75%, 0, 0)")
-  																.css("-moz-transform", "translate3d(75%, 0, 0)")
-  																.css("-o-transform", "translate3d(75%, 0, 0)")
-  																.css("transform", "translate3d(75%, 0, 0)")
-																	.css("-webkit-transition", "-webkit-transform 500ms ease")
-																	.css("-moz-transition", "-moz-transform 500ms ease")
-																	.css("-o-transition", "-o-transform 500ms ease")
-																	.css("transition", "transform 500ms ease;");
-			$(".toggle").css("color", "#444");
-		}
-	}
+	// var touchToOpenSideNav = function() {
+	// 	if ($("body").hasClass("opened")) {
+	// 		$("body").removeClass("opened").css("-webkit-transform", "translate3d(0, 0, 0)")
+	// 																	.css("-moz-transform", "translate3d(0, 0, 0)")
+	// 																	.css("-o-transform", "translate3d(0, 0, 0)")
+	// 																	.css("transform", "translate3d(0, 0, 0)")
+	// 																	.css("-webkit-transition", "-webkit-transform 500ms ease")
+	// 																	.css("-moz-transition", "-moz-transform 500ms ease")
+	// 																	.css("-o-transition", "-o-transform 500ms ease")
+	// 																	.css("transition", "transform 500ms ease;");
+	// 		$(".toggle").css("color", "inherit");
+	// 	} else {
+ //  		$("body").addClass("opened").css("-webkit-transform", "translate3d(75%, 0, 0)")
+ //  																.css("-moz-transform", "translate3d(75%, 0, 0)")
+ //  																.css("-o-transform", "translate3d(75%, 0, 0)")
+ //  																.css("transform", "translate3d(75%, 0, 0)")
+	// 																.css("-webkit-transition", "-webkit-transform 500ms ease")
+	// 																.css("-moz-transition", "-moz-transform 500ms ease")
+	// 																.css("-o-transition", "-o-transform 500ms ease")
+	// 																.css("transition", "transform 500ms ease;");
+	// 		$(".toggle").css("color", "#444");
+	// 	}
+	// }
 
-	$(".toggle").on("touchstart", function(e) {
-		e.preventDefault();
-		var touchObject = e.originalEvent.targetTouches[0];
-		start = parseInt(touchObject.pageX);
-		console.log(start);
-	})
+	// $(".toggle").on("touchstart", function(e) {
+	// 	e.preventDefault();
+	// 	var touchObject = e.originalEvent.targetTouches[0];
+	// 	start = parseInt(touchObject.pageX);
+	// 	console.log(start);
+	// })
 
-	$(".toggle").on("touchmove", function(e) {
-		e.preventDefault();
-		var touchObject = e.originalEvent.targetTouches[0];
-		distance = parseInt(touchObject.pageX) - start;
-		if($("body").hasClass("opened")) {
-			$("body").css("-webkit-transform", "translate3d(" + (75 - Math.abs(slideNav())) + "%, 0, 0)")
-							 .css("-moz-transform", "translate3d(" + (75 - Math.abs(slideNav())) + "%, 0, 0)")
-							 .css("-o-transform", "translate3d(" + (75 - Math.abs(slideNav())) + "%, 0, 0)")
-							 .css("transform", "translate3d(" + (75 - Math.abs(slideNav())) + "%, 0, 0)");
-		} else {
-			$("body").css("-webkit-transform", "translate3d(" + Math.abs(slideNav()) + "%, 0, 0)")
-							 .css("-moz-transform", "translate3d(" + Math.abs(slideNav()) + "%, 0, 0)")
-							 .css("-o-transform", "translate3d(" + Math.abs(slideNav()) + "%, 0, 0)")
-							 .css("transform", "translate3d(" + Math.abs(slideNav()) + "%, 0, 0)");
-		}
-		console.log(distance);
-	})
+	// $(".toggle").on("touchmove", function(e) {
+	// 	e.preventDefault();
+	// 	var touchObject = e.originalEvent.targetTouches[0];
+	// 	distance = parseInt(touchObject.pageX) - start;
+	// 	if($("body").hasClass("opened")) {
+	// 		$("body").css("-webkit-transform", "translate3d(" + (75 - Math.abs(slideNav())) + "%, 0, 0)")
+	// 						 .css("-moz-transform", "translate3d(" + (75 - Math.abs(slideNav())) + "%, 0, 0)")
+	// 						 .css("-o-transform", "translate3d(" + (75 - Math.abs(slideNav())) + "%, 0, 0)")
+	// 						 .css("transform", "translate3d(" + (75 - Math.abs(slideNav())) + "%, 0, 0)");
+	// 	} else {
+	// 		$("body").css("-webkit-transform", "translate3d(" + Math.abs(slideNav()) + "%, 0, 0)")
+	// 						 .css("-moz-transform", "translate3d(" + Math.abs(slideNav()) + "%, 0, 0)")
+	// 						 .css("-o-transform", "translate3d(" + Math.abs(slideNav()) + "%, 0, 0)")
+	// 						 .css("transform", "translate3d(" + Math.abs(slideNav()) + "%, 0, 0)");
+	// 	}
+	// 	console.log(distance);
+	// })
 
 	$(".toggle").on("touchend", function(e) {
 		e.preventDefault();
-		touchToOpenSideNav();
+		// touchToOpenSideNav();
+		openSideNav();
 	})
 
 	var slideNav = function() {
