@@ -20,7 +20,7 @@ $(function() {
 
 	var openSideNav = function() {
 		if ($("html").hasClass("openNav")) {
-			$("html").removeClass("openNav");
+			$("html").removeClass("openNav").css("overflow", "hidden");
 			$(".toggle").css("color", "inherit");
 		} else {
   		$("html").addClass("openNav");
