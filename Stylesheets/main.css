@@ -177,6 +177,9 @@ footer {
 		color: inherit;
 		cursor: pointer;
 	}
+	.toggle-pressed {
+		color: #444;
+	}
 	.logo {
 		margin: 10px 0 0 0;
 		width: 10%;

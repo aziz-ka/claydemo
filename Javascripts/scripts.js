@@ -1,44 +1,41 @@
 $(function() {
+
 	var url = window.location.href;
-	$("header ul li a").each(function() {
+	$("nav li a").each(function() {
 		if(url + ".html" == this.href) {
 			$(this).addClass("current");
 		}
 	})
-	// $(document).ready(function() {
-	// 	resizeDropdown();
-	// })
 	$(window).resize(function() {
 		csslider();
 		resizeDropdown();
 	})
 	
-	$(".toggle").click(function(e) {
+	$(".toggle").on("click touchend", function(e) {
 		e.preventDefault();
 		openSideNav();
 	})
+	// $(".toggle").on("touchend", function(e) {
+	// 	e.preventDefault();
+	// 	openSideNav();
+	// 	// touchToOpenSideNav();
+	// })
+	// $("main").on("touchend", function(e) {
+	// 	e.preventDefault();
+	// 	if($("html").hasClass("openNav")) {
+	// 		openSideNav();
+	// 	}
+	// })
 
 	var openSideNav = function() {
-		if ($("html").hasClass("openNav")) {
-			$("html").removeClass("openNav").css("overflow", "visible");
-			$(".toggle").css("color", "inherit");
-		} else {
-  		$("html").addClass("openNav").css("overflow", "hidden");
-			$(".toggle").css("color", "#444");
-		}
+		$("html").toggleClass("openNav");
+		$(".toggle").toggleClass("toggle-pressed");
 	}
 
-	$(".toggle").on("touchend", function(e) {
-		e.preventDefault();
-		// touchToOpenSideNav();
-		openSideNav();
-	})
-	$("main").on("touchend", function(e) {
-		e.preventDefault();
-		if($("html").hasClass("openNav")) {
-			// openSideNav();
-		}
-	})
+	// $(".social img").on("click touchend", function() {
+	// 	var className = $(this).attr("class");
+	// 	$(this).toggleClass(className + "-pressed");
+	// })
 
 	// var touchToOpenSideNav = function() {
 	// 	if ($("body").hasClass("opened")) {
