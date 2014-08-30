@@ -116,6 +116,7 @@ $(function() {
 	}
 	
 	var sliderCount = 0;
+	var reverseSliderCount = $(".csslider input").length;
 	
 	var nextSlide = function() {
 		sliderCount += 1;
@@ -127,6 +128,20 @@ $(function() {
 		}
 	}
 	setInterval(nextSlide, 5000);
+	
+	var prevSlide = function() {
+		var prevInput = $(".csslider input").length - Math.abs(sliderCount);
+		if(sliderCount <= 0) {
+			$(".csslider input:nth-of-type(" + prevInput + ")").click();
+			sliderCount = prevInput - 1;
+		} else {
+			var el = $(".csslider input:nth-of-type(" + (sliderCount + 1) + ")");
+			$(el).prev().click();
+			sliderCount -= 1;
+		}
+		console.log("sliderCount " + sliderCount);
+		console.log("prevInput " + prevInput);
+	}
 
 	var sliderImage = $(".csslider > ul");
 	var start = 0;
@@ -136,21 +151,23 @@ $(function() {
 		e.preventDefault();
 		var touchObject = e.originalEvent.targetTouches[0];
 		start = parseInt(touchObject.pageX);
-		console.log(start);
+		// console.log(start);
 	})
 
 	$(sliderImage).on("touchmove", function(e) {
 		e.preventDefault();
 		var touchObject = e.originalEvent.targetTouches[0];
 		distance = parseInt(touchObject.pageX) - start;
-		console.log(distance);
+		// console.log(distance);
 	})
 
 	$(sliderImage).on("touchend", function(e) {
 		e.preventDefault();
 		var touchObject = e.originalEvent.targetTouches[0];
-		if(distance < -50) {
+		if(distance < 0) {
 			nextSlide();
+		} else {
+			prevSlide();
 		}
 	})
 	
