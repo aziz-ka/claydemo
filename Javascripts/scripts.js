@@ -19,7 +19,7 @@ $(function() {
 	})
 
 	var openSideNav = function() {
-		$("html").toggleClass("openNav no-scroll");
+		$("html").toggleClass("openNav");
 		$(".toggle").toggleClass("toggle-pressed");
 	}
 
