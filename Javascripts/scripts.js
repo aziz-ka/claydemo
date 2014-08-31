@@ -13,16 +13,10 @@ $(function() {
 	
 	//////////// TOGGLE ////////////
 	
-	$(".toggle").on("click touchend", function(e) {
+	$(".toggle").on("click", function(e) {
 		e.preventDefault();
 		openSideNav();
 	})
-	// $("main").on("touchend", function(e) {
-	// 	e.preventDefault();
-	// 	if($("html").hasClass("openNav")) {
-	// 		openSideNav();
-	// 	}
-	// })
 
 	var openSideNav = function() {
 		$("html").toggleClass("openNav no-scroll");
@@ -143,29 +137,36 @@ $(function() {
 		console.log("prevInput " + prevInput);
 	}
 
-	var start = 0;
-	var distance = 0;
+	var startX = 0;
+	var startY = 0;
+	var distanceX = 0;
+	var distanceY = 0;
 
 	$(".csslider > ul").on("touchstart", function(e) {
 		e.preventDefault();
 		var touchObject = e.originalEvent.targetTouches[0];
-		start = parseInt(touchObject.pageX);
-		// console.log(start);
+		startX = parseInt(touchObject.pageX);
+		startY = parseInt(touchObject.pageY);
+		// console.log(startX);
 	})
 
 	$(".csslider > ul").on("touchmove", function(e) {
 		e.preventDefault();
 		var touchObject = e.originalEvent.targetTouches[0];
-		distance = parseInt(touchObject.pageX) - start;
-		// console.log(distance);
+		distanceX = parseInt(touchObject.pageX) - startX;
+		distanceY = parseInt(touchObject.pageY) - startY;
+		window.scroll(0, distanceY);
+		console.log("x: " + distanceX);
+		console.log("y: " + distanceY);
 	})
 
 	$(".csslider > ul").on("touchend", function(e) {
 		e.preventDefault();
 		var touchObject = e.originalEvent.targetTouches[0];
-		if(distance < 0) {
+		if(distanceX < -50) {
 			nextSlide();
-		} else {
+		}
+		if(distanceX > 50) {
 			prevSlide();
 		}
 		// clearInterval(sliderTimer);
