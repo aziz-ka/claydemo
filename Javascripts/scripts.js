@@ -11,15 +11,12 @@ $(function() {
 		resizeDropdown();
 	})
 	
+	//////////// TOGGLE ////////////
+	
 	$(".toggle").on("click touchend", function(e) {
 		e.preventDefault();
 		openSideNav();
 	})
-	// $(".toggle").on("touchend", function(e) {
-	// 	e.preventDefault();
-	// 	openSideNav();
-	// 	// touchToOpenSideNav();
-	// })
 	// $("main").on("touchend", function(e) {
 	// 	e.preventDefault();
 	// 	if($("html").hasClass("openNav")) {
@@ -28,7 +25,7 @@ $(function() {
 	// })
 
 	var openSideNav = function() {
-		$("html").toggleClass("openNav");
+		$("html").toggleClass("openNav no-scroll");
 		$(".toggle").toggleClass("toggle-pressed");
 	}
 
@@ -94,6 +91,8 @@ $(function() {
 	// 	}
 	// }
 	
+	//////////// NAV BAR DROPDOWN ////////////
+	
 	var resizeDropdown = function() {
 		if($(window).width() > 600) {
 			var left = Math.floor($("body").width() / -2.53);
@@ -111,12 +110,13 @@ $(function() {
 		e.preventDefault();
 	})
 	
+	//////////// IMAGE SLIDER ON HOME PAGE ////////////
+	
 	var cssliderHeightChange = function() {
 		$(".csslider > ul").height($(".csslider > ul > li > img").height());
 	}
 	
 	var sliderCount = 0;
-	var reverseSliderCount = $(".csslider input").length;
 	
 	var nextSlide = function() {
 		sliderCount += 1;
@@ -127,7 +127,7 @@ $(function() {
 			sliderCount = 0;
 		}
 	}
-	setInterval(nextSlide, 5000);
+	var sliderTimer = setInterval(nextSlide, 5000);
 	
 	var prevSlide = function() {
 		var prevInput = $(".csslider input").length - Math.abs(sliderCount);
@@ -143,25 +143,24 @@ $(function() {
 		console.log("prevInput " + prevInput);
 	}
 
-	var sliderImage = $(".csslider > ul");
 	var start = 0;
 	var distance = 0;
 
-	$(sliderImage).on("touchstart", function(e) {
+	$(".csslider > ul").on("touchstart", function(e) {
 		e.preventDefault();
 		var touchObject = e.originalEvent.targetTouches[0];
 		start = parseInt(touchObject.pageX);
 		// console.log(start);
 	})
 
-	$(sliderImage).on("touchmove", function(e) {
+	$(".csslider > ul").on("touchmove", function(e) {
 		e.preventDefault();
 		var touchObject = e.originalEvent.targetTouches[0];
 		distance = parseInt(touchObject.pageX) - start;
 		// console.log(distance);
 	})
 
-	$(sliderImage).on("touchend", function(e) {
+	$(".csslider > ul").on("touchend", function(e) {
 		e.preventDefault();
 		var touchObject = e.originalEvent.targetTouches[0];
 		if(distance < 0) {
@@ -169,20 +168,16 @@ $(function() {
 		} else {
 			prevSlide();
 		}
+		// clearInterval(sliderTimer);
+		// var sliderTimer = setInterval(nextSlide, 5000);
 	})
 	
+	//////////// PORTFOLIO PAGES ////////////
 
+	var lightbox = $(".gallery li img");
+	var numOfClicks = 0;
 
-
-	var image = $(".gallery li img");
-	// image.hover(function() {
-	// 	$(image).css("-webkit-filter", "blur(3px)");
-	// 	$(this).css("-webkit-filter", "blur(0)");
-	// }, function() {
-	// 	$(image).css("-webkit-filter", "blur(0)");
-	// 	$(this).css("-webkit-filter", "blur(0)");
-	// });
-	image.click(function() {
+	lightbox.click(function() {
 		if($(window).width() > 600) {
 			that = this;
 			var imageURI = $(this).attr("src");
@@ -192,35 +187,32 @@ $(function() {
 	})
 	
 	$(".overlay, .close").click(function() {
-		$(image).removeClass("modal");
+		$(lightbox).removeClass("modal");
 		$(".modal, .overlay").css("visibility", "hidden");
+		numOfClicks = 0;
 	})
 
-	// var numOfClicks = 0;
-	// $(".next").click(function() {
-	// 	numOfClicks += 1;
-	// 	console.log(numOfClicks);
-	// 	return numOfClicks;
-	// })
-
 	$(".next").click(function() {
-		debugger
-		var count = image.index(that);
-		if (count === image.length - 1) {
-			$(".largeImage").attr("src", $(image[0]).attr('src'));
+		// debugger
+		numOfClicks += 1;
+		var imageIndex = lightbox.index(that) + numOfClicks;
+		if (imageIndex === lightbox.length) {
+			numOfClicks = lightbox.index(that) * (-1);
+			$(".largeImage").attr("src", $(lightbox[0]).attr('src'));
 		} else {
-			$(".largeImage").attr("src", $(image[count + 1]).attr('src'));
+			$(".largeImage").attr("src", $(lightbox[imageIndex]).attr('src'));
 		}
-		console.log(that);
 	})
 
 	$(".previous").click(function() {
-		var count = image.index(that);
-		if (count < image.length) {
-			$(".largeImage").attr("src", $(image[count - 1]).attr('src'));
+		numOfClicks += 1;
+		var imageIndex = lightbox.index(that) - numOfClicks;
+		if (imageIndex < 0) {
+			numOfClicks = (lightbox.length - lightbox.index(that) - 1) * (-1);
+			$(".largeImage").attr("src", $(lightbox[lightbox.length - 1]).attr('src'));
+		} else {
+			$(".largeImage").attr("src", $(lightbox[imageIndex]).attr('src'));
 		}
-		if (count === 0) {
-			$(".largeImage").attr("src", $(image[image.length - 1]).attr('src'));
-		}
+		// console.log(imageIndex);
 	})
 })
