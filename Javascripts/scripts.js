@@ -13,13 +13,13 @@ $(function() {
 	
 	//////////// TOGGLE ////////////
 	
-	$(".toggle").on("click", function(e) {
+	$(".toggle").on("click touchstart", function(e) {
 		e.preventDefault();
 		openSideNav();
 	})
 
 	var openSideNav = function() {
-		$("html").toggleClass("openNav");
+		$("html").toggleClass("openNav no-scroll");
 		$(".toggle").toggleClass("toggle-pressed");
 	}
 
