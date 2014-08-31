@@ -155,7 +155,7 @@ $(function() {
 		var touchObject = e.originalEvent.targetTouches[0];
 		distanceX = parseInt(touchObject.pageX) - startX;
 		distanceY = parseInt(touchObject.pageY) - startY;
-		window.scroll(0, distanceY);
+		window.scroll(0, distanceY * (-1));
 		console.log("x: " + distanceX);
 		console.log("y: " + distanceY);
 	})
