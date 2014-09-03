@@ -22,68 +22,6 @@ $(function() {
 		$("html").toggleClass("openNav no-scroll");
 		$(".toggle").toggleClass("toggle-pressed");
 	}
-
-	// $(".social img").on("click touchend", function() {
-	// 	var className = $(this).attr("class");
-	// 	$(this).toggleClass(className + "-pressed");
-	// })
-
-	// var touchToOpenSideNav = function() {
-	// 	if ($("body").hasClass("opened")) {
-	// 		$("body").removeClass("opened").css("-webkit-transform", "translate3d(0, 0, 0)")
-	// 																	.css("-moz-transform", "translate3d(0, 0, 0)")
-	// 																	.css("-o-transform", "translate3d(0, 0, 0)")
-	// 																	.css("transform", "translate3d(0, 0, 0)")
-	// 																	.css("-webkit-transition", "-webkit-transform 500ms ease")
-	// 																	.css("-moz-transition", "-moz-transform 500ms ease")
-	// 																	.css("-o-transition", "-o-transform 500ms ease")
-	// 																	.css("transition", "transform 500ms ease;");
-	// 		$(".toggle").css("color", "inherit");
-	// 	} else {
- //  		$("body").addClass("opened").css("-webkit-transform", "translate3d(75%, 0, 0)")
- //  																.css("-moz-transform", "translate3d(75%, 0, 0)")
- //  																.css("-o-transform", "translate3d(75%, 0, 0)")
- //  																.css("transform", "translate3d(75%, 0, 0)")
-	// 																.css("-webkit-transition", "-webkit-transform 500ms ease")
-	// 																.css("-moz-transition", "-moz-transform 500ms ease")
-	// 																.css("-o-transition", "-o-transform 500ms ease")
-	// 																.css("transition", "transform 500ms ease;");
-	// 		$(".toggle").css("color", "#444");
-	// 	}
-	// }
-
-	// $(".toggle").on("touchstart", function(e) {
-	// 	e.preventDefault();
-	// 	var touchObject = e.originalEvent.targetTouches[0];
-	// 	start = parseInt(touchObject.pageX);
-	// 	console.log(start);
-	// })
-
-	// $(".toggle").on("touchmove", function(e) {
-	// 	e.preventDefault();
-	// 	var touchObject = e.originalEvent.targetTouches[0];
-	// 	distance = parseInt(touchObject.pageX) - start;
-	// 	if($("body").hasClass("opened")) {
-	// 		$("body").css("-webkit-transform", "translate3d(" + (75 - Math.abs(slideNav())) + "%, 0, 0)")
-	// 						 .css("-moz-transform", "translate3d(" + (75 - Math.abs(slideNav())) + "%, 0, 0)")
-	// 						 .css("-o-transform", "translate3d(" + (75 - Math.abs(slideNav())) + "%, 0, 0)")
-	// 						 .css("transform", "translate3d(" + (75 - Math.abs(slideNav())) + "%, 0, 0)");
-	// 	} else {
-	// 		$("body").css("-webkit-transform", "translate3d(" + Math.abs(slideNav()) + "%, 0, 0)")
-	// 						 .css("-moz-transform", "translate3d(" + Math.abs(slideNav()) + "%, 0, 0)")
-	// 						 .css("-o-transform", "translate3d(" + Math.abs(slideNav()) + "%, 0, 0)")
-	// 						 .css("transform", "translate3d(" + Math.abs(slideNav()) + "%, 0, 0)");
-	// 	}
-	// 	console.log(distance);
-	// })
-
-	// var slideNav = function() {
-	// 	if(distance <= 75 || distance >= -75) {
-	// 		return distance;
-	// 	} else {
-	// 		return 75;
-	// 	}
-	// }
 	
 	//////////// NAV BAR DROPDOWN ////////////
 	
@@ -104,7 +42,7 @@ $(function() {
 		e.preventDefault();
 	})
 	
-	//////////// IMAGE SLIDER ON HOME PAGE ////////////
+	//////////// HOME PAGE IMAGE SLIDER ////////////
 	
 	var cssliderHeightChange = function() {
 		$(".csslider > ul").height($(".csslider > ul > li > img").height());
@@ -155,7 +93,7 @@ $(function() {
 		var touchObject = e.originalEvent.targetTouches[0];
 		distanceX = parseInt(touchObject.pageX) - startX;
 		distanceY = parseInt(touchObject.pageY) - startY;
-		window.scroll(0, distanceY * (-1));
+//		window.scroll(0, distanceY * (-1));
 		console.log("x: " + distanceX);
 		console.log("y: " + distanceY);
 	})
@@ -216,4 +154,52 @@ $(function() {
 		}
 		// console.log(imageIndex);
 	})
+
+	//////////// SQUARE & ETSY API ////////////
+
+	$.ajax({
+		url: "https://connect.squareup.com/v1/me/items",
+	  headers: { "Authorization": "Bearer ZZfRR1MSVVvahFa1sazQhA" },
+		dataType: "json",
+		method: "get",
+		success: function(data) {
+			console.log(data);
+		}
+	})
+
+	$.ajax({
+		url: "https://openapi.etsy.com/v2/users/venera88/feedback/as-subject.js?api_key=klnnnt4w3cts35bn6z9cpnql",
+		dataType: "jsonp",
+		method: "get",
+		success: function(data) {
+			for(var i = 0; i < 6; i++) {
+//				debugger
+				var feedback = data.results[i].message;
+				var firstSubstring = feedback.substring(0, 140) + " ";
+				var secondSubstring = feedback.substring(140);
+				var readMore = $("<a>").text("read more").attr("href", "#").addClass("read-more");
+				var quoteIcon = $("<i>").addClass("fa fa-quote-left");
+				if (feedback.length > 140) {
+					$(readMore).appendTo($("<li>").text(firstSubstring).data("text", secondSubstring).appendTo($(".feedback ul")).before(quoteIcon));
+				} else {
+					$("<li>").text(feedback).appendTo($(".feedback ul")).before(quoteIcon);
+				}
+			}
+		}
+	})
+	
+	$(".feedback ul").on("click", ".read-more", function(e) {
+		e.preventDefault();
+		var readLess = $(this).text("read less").removeClass("read-more").addClass("read-less");
+		var parent = $(this).parent();
+		$(readLess).appendTo($(parent).text($(parent).text().substring(0, 140) + $(parent).data("text") + " "));
+	})
+	
+	$(".feedback ul").on("click", ".read-less", function(e) {
+		e.preventDefault();
+		var readMore = $(this).text("read more").removeClass("read-less").addClass("read-more");
+		var parent = $(this).parent();
+		$(readMore).appendTo($(parent).text($(parent).text().substring(0, 140) + " "));
+	})
+
 })

@@ -1,18 +1,63 @@
-@keyframes opacity {
-	0% {opacity: 0.1;
-		width: 25px;}
-	100% {opacity: 1;
-		width: 70px;}
+h2 {
+	font-size: 150%;
+	font-weight: 100;
+	color: #555;
+	margin-bottom: 7%;
+/*	text-align: left;*/
+/*	font-family: 'Miama', cursive;*/
+/*	line-height: 300%;*/
 }
-@-webkit-keyframes opacity {
-	from {opacity: 0.1;
-		width: 25px;}
-	to {opacity: 1;
-		width: 70px;}
+.fa-heart-o {
+	font-size: .7em;
+	color: red;
 }
-@-moz-keyframes opacity {
-	0% {opacity: 0.1;
-		width: 25px;}
-	100% {opacity: 1;
-		width: 70px;}
+.feedback {
+	margin-top: 10%;
+}
+.fa-bullhorn {
+	font-size: 1.25em;
+	color: #4bb553;
+	padding-left: .5em;
+}
+.feedback h3 {
+	margin-bottom: 5%;
+	font-size: 1.5em;
+}
+.feedback ul li {
+	overflow: hidden;
+	text-align: left;
+	display: block;
+	margin-bottom: 5%;
+	padding: 0 0 0 5%;
+}
+.fa-quote-left {
+	color: #4bb553;
+	text-align: left;
+	display: block;
+	position: absolute;
+	opacity: .5;
+}
+a {
+	text-decoration: none;
+}
+.feedback a, .feedback a:hover, .feedback a:visited {
+	color: default;
+}
+
+@media (max-width: 600px) {
+	h2 {
+		font-size: 115%;
+		text-align: justify;
+	}
+	.feedback {
+		margin-top: 20%;
+	}
+	.feedback h3 {
+		margin-bottom: 10%;
+		font-size: 1.3em;
+	}
+	.feedback ul li {
+		padding-left: 9%;
+		margin-bottom: 8%;
+	}
 }

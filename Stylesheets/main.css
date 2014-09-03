@@ -108,10 +108,10 @@ ul li {
 	-moz-transition: opacity, ease-out;
 	-o-transition: opacity, ease-out;
 	transition: opacity, ease-out;
-	opacity: .5;
+	opacity: .3;
 }
 .social li a img:hover {
-	opacity: .7;
+	opacity: .6;
 }
 .facebook:hover {
 	background-color: #3355AA;
@@ -120,7 +120,7 @@ ul li {
 	background-color: #EE4B4B;
 }
 .pinterest:hover {
-	background-color: #FF2727;
+	background-color: #FF0707;
 }
 .tweeter:hover {
 	background-color: #55AAEE;
