@@ -93,7 +93,7 @@ $(function() {
 		var touchObject = e.originalEvent.targetTouches[0];
 		distanceX = parseInt(touchObject.pageX) - startX;
 		distanceY = parseInt(touchObject.pageY) - startY;
-//		window.scroll(0, distanceY * (-1));
+		// window.scroll(0, distanceY * (-1));
 		console.log("x: " + distanceX);
 		console.log("y: " + distanceY);
 	})
@@ -125,14 +125,15 @@ $(function() {
 		}
 	})
 	
-	$(".overlay, .close").click(function() {
+	$(".overlay, .close").on("click", function(e) {
+		e.preventDefault();
 		$(lightbox).removeClass("modal");
 		$(".modal, .overlay").css("visibility", "hidden");
 		numOfClicks = 0;
 	})
 
-	$(".next").click(function() {
-		// debugger
+	$(".next").on("click touchstart", function(e) {
+		e.preventDefault();
 		numOfClicks += 1;
 		var imageIndex = lightbox.index(that) + numOfClicks;
 		if (imageIndex === lightbox.length) {
@@ -143,7 +144,8 @@ $(function() {
 		}
 	})
 
-	$(".previous").click(function() {
+	$(".previous").on("click touchstart", function(e) {
+		e.preventDefault();
 		numOfClicks += 1;
 		var imageIndex = lightbox.index(that) - numOfClicks;
 		if (imageIndex < 0) {

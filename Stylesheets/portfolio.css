@@ -75,10 +75,10 @@ footer {
 	padding-top: 5%;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
 	.modal {
-		left: 10%;
-		width: 80%;
+		left: 12.5%;
+		width: 75%;
 	}
 }
 
