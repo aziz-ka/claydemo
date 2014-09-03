@@ -50,18 +50,19 @@ header {
 }
 .close, .next, .previous {
   cursor: pointer;
-  font-size: 200%;
+  font-size: 300%;
   position: relative;
   z-index: 12;
-	margin-top: -3%;
-	color: #bbb;
+	margin-top: -5%;
+	color: #eee;
 }
 .modal div:hover {
 	color: #4b9f53;
 }
 .close {
   float: right;
-  margin-top: -34%;
+  font-size: 200%;
+  margin: -34% .3% 0 0;
 }
 .next {
 	float: right;
@@ -72,6 +73,13 @@ header {
 footer {
 	clear: both;
 	padding-top: 5%;
+}
+
+@media (max-width: 1000px) {
+	.modal {
+		left: 10%;
+		width: 80%;
+	}
 }
 
 @media (max-width: 600px) {

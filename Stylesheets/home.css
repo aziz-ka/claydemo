@@ -10,6 +10,7 @@ h2 {
 .fa-heart-o {
 	font-size: .7em;
 	color: red;
+	margin: 0 2px;
 }
 .feedback {
 	margin-top: 10%;
@@ -28,7 +29,7 @@ h2 {
 	text-align: left;
 	display: block;
 	margin-bottom: 5%;
-	padding: 0 0 0 5%;
+	padding-left: 5%;
 }
 .fa-quote-left {
 	color: #4bb553;
@@ -41,7 +42,8 @@ a {
 	text-decoration: none;
 }
 .feedback a, .feedback a:hover, .feedback a:visited {
-	color: default;
+	color: #f00;
+	opacity: .5;
 }
 
 @media (max-width: 600px) {

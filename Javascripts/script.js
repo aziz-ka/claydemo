@@ -173,7 +173,6 @@ $(function() {
 		method: "get",
 		success: function(data) {
 			for(var i = 0; i < 6; i++) {
-//				debugger
 				var feedback = data.results[i].message;
 				var firstSubstring = feedback.substring(0, 140) + " ";
 				var secondSubstring = feedback.substring(140);
