@@ -157,15 +157,15 @@ $(function() {
 
 	//////////// SQUARE & ETSY API ////////////
 
-	$.ajax({
-		url: "https://connect.squareup.com/v1/me/items",
-	  headers: { "Authorization": "Bearer ZZfRR1MSVVvahFa1sazQhA" },
-		dataType: "json",
-		method: "get",
-		success: function(data) {
-			console.log(data);
-		}
-	})
+//	$.ajax({
+//		url: "https://connect.squareup.com/v1/me/items",
+//	  headers: { "Authorization": "Bearer ZZfRR1MSVVvahFa1sazQhA" },
+//		dataType: "json",
+//		method: "get",
+//		success: function(data) {
+//			console.log(data);
+//		}
+//	})
 
 	$.ajax({
 		url: "https://openapi.etsy.com/v2/users/venera88/feedback/as-subject.js?api_key=klnnnt4w3cts35bn6z9cpnql",
