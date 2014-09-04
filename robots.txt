@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /.htaccess
+Disallow: /pinterest-6479a.html
+Disallow: /logs
+Disallow: /backup

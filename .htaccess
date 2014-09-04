@@ -33,6 +33,10 @@
 
    # this page will be loaded by default (landing page)
    DirectoryIndex home.html
+	 
+	 # block libwww-perl user-agent attacks
+	 RewriteCond %{HTTP_USER_AGENT} libwww-perl.* 
+	 RewriteRule .* – [F,L]
 
    # example.com/page will display the contents of example.com/page.html
    RewriteCond %{REQUEST_FILENAME} !-f
@@ -40,7 +44,11 @@
    RewriteCond %{REQUEST_FILENAME}.html -f
    RewriteRule ^(.+)$ $1.html [L,QSA]
 
-   # 301 from example.com/page.html to example.com/page
+   # 301 redirect from example.com/page.html to example.com/page
    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
    RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+	 
+	 # 301 redirect from www.claymeart.com to claymeart.com
+	 RewriteCond %{HTTP_HOST} ^www\.claymeart\.com$
+	 RewriteRule ^/?$ "http\:\/\/claymeart\.com\/" [R=301,L]
 </ifModule>
