@@ -4,11 +4,11 @@ h2 {
 	font-size: 200%;
 	color: #666;
 }
-.main {
+.picture {
 	float: right;
 	margin: .5% 0 0 3%;
 	border-radius: 20px;
-	width: 50%;
+	width: 30%;
 }
 article {
 	text-align: justify;
@@ -19,7 +19,7 @@ article {
 	h2 {
 		font-size: 175%;
 	}
-	.main {
+	.picture {
 		width: 100%;
 		margin: 0 0 20px 0;
 	}

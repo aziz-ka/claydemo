@@ -43,12 +43,15 @@
    RewriteCond %{REQUEST_FILENAME} !-d
    RewriteCond %{REQUEST_FILENAME}.html -f
    RewriteRule ^(.+)$ $1.html [L,QSA]
+	 
+	 # 301 redirect from www.claymeart.com or claymeart.com/index.html to claymeart.com
+	 RewriteCond %{HTTP_HOST} ^www\.claymeart\.com$
+	 RewriteRule ^/?$ "http\:\/\/claymeart\.com\/" [R=301,L]
+
+	 # Permanent URL redirect from index.html to claymeart.com
+	 Redirect 301 /index http://claymeart.com
 
    # 301 redirect from example.com/page.html to example.com/page
    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
    RewriteRule ^(.*)\.html$ /$1 [R=301,L]
-	 
-	 # 301 redirect from www.claymeart.com to claymeart.com
-	 RewriteCond %{HTTP_HOST} ^www\.claymeart\.com$
-	 RewriteRule ^/?$ "http\:\/\/claymeart\.com\/" [R=301,L]
 </ifModule>

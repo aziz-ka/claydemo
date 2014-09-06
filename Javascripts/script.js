@@ -27,16 +27,16 @@ $(function() {
 	
 	var resizeDropdown = function() {
 		if($(window).width() > 600) {
-			var left = Math.floor($("body").width() / -2.53);
-			$(".dropdown").width($("body").width()).css("left", left);
+			var left = Math.floor($(window).width() / -2.53);
+			$(".dropdown").width($("body").width()/1.1).css("left", left);
 		} else {
 			$(".dropdown").css("left", "inherit").css("width", "inherit");
 		}
 	}
-	resizeDropdown();
+//	resizeDropdown();
 
 	$("#portfolio").mouseover(function() {
-		resizeDropdown();
+//		resizeDropdown();
 	})
 	$("#portfolio > a").click(function(e) {
 		e.preventDefault();

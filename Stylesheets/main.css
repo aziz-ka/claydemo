@@ -4,12 +4,12 @@ html, body {
 body {
 	text-align: center;
 	font-family: 'Quicksand', sans-serif;
-	max-width: 800px;
+/*	max-width: 800px;*/
 	margin: 0 auto;
 	color: #777;
 }
 main {
-	padding: 0 3%;
+	padding: 0 10%;
 }
 body:before {
 	content: "";
@@ -21,14 +21,16 @@ body:before {
 	display: none;
 }
 header {
-	margin-bottom: 10%;
+	margin-bottom: 8%;
 }
 nav > ul {
 	margin: 0;
 }
 .logo {
-	float: right;
-	margin: 50px 11% 0 0;
+/*	float: left;*/
+	position: absolute;
+	left: 10%;
+	margin: 45px 0 0;
 	width: 5em;
 }
 h1 {
@@ -36,7 +38,7 @@ h1 {
 	font-family: 'Miama', cursive;
 	letter-spacing: .1em;
 	color: #666;
-	margin: -2% auto;
+	margin: -15px auto;
 }
 header ul li a {
 	margin: 1.5%;
@@ -81,8 +83,9 @@ ul li {
 	background-color: rgba(255,255,255,1);
 	list-style: none;
 	position: absolute;
-/*	left: -200%;*/
-/*	width: 500%;*/
+	left: -300%;
+	width: 700%;
+	overflow: hidden;
 	text-align: center;
 	z-index: 1;
 	-webkit-box-shadow: 0 1.5em 1.5em -.25em #fff;
@@ -134,24 +137,18 @@ footer {
 }
 
 @media (max-width: 800px) {
-	.logo {
-		margin-right: 8%;
+	main {
+		padding: 0 5%;
 	}
-}
-
-@media (max-width: 700px) {
-	.logo {
-		margin-right: 5%;
-	}
-}
-
-@media (max-width: 650px) {
 	h1 {
 		font-size: 350%;
 	}
 	.logo {
-		margin-right: 7%;
 		width: 4em;
+		left: 5%;
+	}
+	header ul li a {
+		margin: 1.5% 1.2%;
 	}
 }
 
@@ -240,6 +237,7 @@ footer {
   }
   main {
     left: 0;
+		padding: 0 3%;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
@@ -296,7 +294,6 @@ footer {
 @media (max-width: 400px) {
 	h1 {
 		font-size: 225%;
-/*		line-height: 270%;*/
 	}
 	.toggle {
 		margin-top: 25px;
