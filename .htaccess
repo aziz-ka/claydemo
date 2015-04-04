@@ -55,3 +55,36 @@
    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
    RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 </ifModule>
+
+# spam referral
+<IfModule mod_setenvif.c>
+  SetEnvIfNoCase Referer semalt.com spambot=yes
+  SetEnvIfNoCase Referer buttons-for-website.com spambot=yes
+  SetEnvIfNoCase Referer 4webmasters.org spambot=yes
+  SetEnvIfNoCase Referer 7makemoneyonline.com spambot=yes
+  SetEnvIfNoCase Referer best-seo-solution.com spambot=yes
+  SetEnvIfNoCase Referer bestwebsitesawards.com spambot=yes
+  SetEnvIfNoCase Referer blackhatworth.com spambot=yes
+  SetEnvIfNoCase Referer cenoval.ru spambot=yes
+  SetEnvIfNoCase Referer darodar.com spambot=yes
+  SetEnvIfNoCase Referer econom.co spambot=yes
+  SetEnvIfNoCase Referer hulfingtonpost.com spambot=yes
+  SetEnvIfNoCase Referer humanorightswatch.org spambot=yes
+  SetEnvIfNoCase Referer ilovevitaly.co spambot=yes
+  SetEnvIfNoCase Referer iskalko.ru spambot=yes
+  SetEnvIfNoCase Referer kambasoft.com spambot=yes
+  SetEnvIfNoCase Referer lomb.co spambot=yes
+  SetEnvIfNoCase Referer lombia.co spambot=yes
+  SetEnvIfNoCase Referer lumb.co spambot=yes
+  SetEnvIfNoCase Referer o-o-6-o-o.com spambot=yes
+  SetEnvIfNoCase Referer priceg.com spambot=yes
+  SetEnvIfNoCase Referer ranksonic.info spambot=yes
+  SetEnvIfNoCase Referer see-your-website-here.com spambot=yes
+  SetEnvIfNoCase Referer semalt.com spambot=yes
+  SetEnvIfNoCase Referer simple-share-buttons.com spambot=yes
+  SetEnvIfNoCase Referer social-buttons.com spambot=yes
+
+  Order allow,deny
+  Allow from all
+  Deny from env=spambot
+</IfModule>

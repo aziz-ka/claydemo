@@ -3,6 +3,7 @@ header {
 }
 h2 {
 	font-weight: 100;
+	margin-bottom: 8%;
 }
 .gallery li {
 	overflow: hidden;
@@ -20,10 +21,10 @@ h2 {
 	cursor: pointer;
 }
 .gallery li img:hover {
-	-webkit-transform: scale(1.1);
-	-moz-transform: scale(1.1);
-	-o-transform: scale(1.1);
-	transform: scale(1.1);
+/*	-webkit-transform: scale(1.1);*/
+/*	-moz-transform: scale(1.1);*/
+/*	-o-transform: scale(1.1);*/
+/*	transform: scale(1.1);*/
 }
 
 .overlay {
@@ -77,6 +78,80 @@ footer {
 	clear: both;
 	padding-top: 5%;
 }
+
+
+
+.gallery li {
+/*	margin: 20px auto;*/
+/*	width: 400px;*/
+/*	padding: 0;*/
+/*	max-width: 100%;*/
+/*	border: 1px solid red;*/
+	position: relative;
+}
+.gallery li img {
+/*	max-width: 100%;*/
+/*	top: 0;*/
+/*	left: 0;*/
+/*	outline: 1px solid transparent;*/
+/*	border: 1px solid red;*/
+	margin: 0;
+	position: absolute;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.gallery li img:first-child {
+	position: relative;
+}
+/*.gallery li img:first-child,*/
+.gallery li img:nth-child(2),
+.gallery li img:nth-child(3) {
+/*	top: auto;*/
+/*	left: auto;*/
+	width: 35%;
+	bottom: 0;
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+	-o-transform: scale(0);
+	transform: scale(0);
+}
+.gallery li img:first-child {
+/*	right: 0;*/
+}
+.gallery li img:nth-child(2) {
+	left: 15%;
+}
+.gallery li img:nth-child(3) {
+	right: 15%;
+}
+/*.gallery li.active img:first-child,*/
+.gallery li.active img:nth-child(2),
+.gallery li.active img:nth-child(3) {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+}
+.gallery li img:nth-child(1) {
+	-webkit-transform-origin: 50% -1.5%;
+	-moz-transform-origin: 50% -1.5%;
+	-ms-transform-origin: 50% -1.5%;
+	-o-transform-origin: 50% -1.5%;
+	transform-origin: 50% -1.5%;
+}
+.gallery li.active img:nth-child(1) {
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	-ms-transform: scale(0.75);
+	-o-transform: scale(0.75);
+	transform: scale(0.75);
+}
+
+
 
 @media (max-width: 800px) {
 	.modal {

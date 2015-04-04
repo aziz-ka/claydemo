@@ -7,8 +7,13 @@ $(function() {
 		}
 	})
 	$(window).resize(function() {
-		csslider();
-		resizeDropdown();
+//		csslider();
+	})
+	$("#portfolio > a").click(function(e) {
+		e.preventDefault();
+	})
+	$(".inter-buyer a").hover(function() {
+		$(".fa-globe").toggleClass("fa-spin");
 	})
 	
 	//////////// TOGGLE ////////////
@@ -22,25 +27,6 @@ $(function() {
 		$("html").toggleClass("openNav no-scroll");
 		$(".toggle").toggleClass("toggle-pressed");
 	}
-	
-	//////////// NAV BAR DROPDOWN ////////////
-	
-	var resizeDropdown = function() {
-		if($(window).width() > 600) {
-			var left = Math.floor($(window).width() / -2.53);
-			$(".dropdown").width($("body").width()/1.1).css("left", left);
-		} else {
-			$(".dropdown").css("left", "inherit").css("width", "inherit");
-		}
-	}
-//	resizeDropdown();
-
-	$("#portfolio").mouseover(function() {
-//		resizeDropdown();
-	})
-	$("#portfolio > a").click(function(e) {
-		e.preventDefault();
-	})
 	
 	//////////// HOME PAGE IMAGE SLIDER ////////////
 	
@@ -117,7 +103,7 @@ $(function() {
 	var numOfClicks = 0;
 
 	lightbox.click(function() {
-		if($(window).width() > 600) {
+		if($(window).width() > 600 && $(this).parent().hasClass("active")) {
 			that = this;
 			var imageURI = $(this).attr("src");
 			$(".largeImage").attr({src: imageURI}).addClass("modal");
@@ -128,6 +114,7 @@ $(function() {
 	$(".overlay, .close").on("click", function(e) {
 		e.preventDefault();
 		$(lightbox).removeClass("modal");
+		$(".gallery li").removeClass("active");
 		$(".modal, .overlay").css("visibility", "hidden");
 		numOfClicks = 0;
 	})
@@ -156,6 +143,17 @@ $(function() {
 		}
 		// console.log(imageIndex);
 	})
+	
+	if("ontouchstart" in window) {
+		$(".gallery li").click(function() {
+			$(".gallery li").removeClass("active");
+			$(this).toggleClass("active");
+		})
+	} else {
+		$(".gallery li").hover(function() {
+			$(this).toggleClass("active");
+		})
+	}
 
 	//////////// SQUARE & ETSY API ////////////
 

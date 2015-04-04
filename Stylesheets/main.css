@@ -1,10 +1,12 @@
+* {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 html, body {
 	height: 100%;
 }
 body {
 	text-align: center;
 	font-family: 'Quicksand', sans-serif;
-/*	max-width: 800px;*/
 	margin: 0 auto;
 	color: #777;
 }
@@ -136,6 +138,23 @@ footer {
 	margin: 8% auto 0;
 }
 
+/***** SHOP CSS *****/
+
+.fa-globe {
+	font-size: 3em;
+	color: #4b9f53;
+	margin: 5% auto 0;
+}
+.inter-buyer {
+	font-size: 1.5em;
+}
+.inter-buyer a {
+	text-decoration: none;
+	color: #4b9f53;
+}
+
+/***** SHOP CSS *****/
+
 @media (max-width: 800px) {
 	main {
 		padding: 0 5%;
@@ -154,7 +173,7 @@ footer {
 
 @media (max-width: 600px) {
 	body {
-		padding: 0;
+/*		padding: 0;*/
 	}
 	.fa {
 		display: inline-block;
@@ -192,7 +211,9 @@ footer {
 	.social li a img {
 		width: 10%;
 	}
-
+	footer {
+		margin-top: 11%;
+	}
 	nav {
 		width: 65%;
 		position: absolute;
@@ -284,10 +305,6 @@ footer {
 		margin-right: 3%;
 		font-size: .5em;
 		vertical-align: middle;
-	}
-
-	footer {
-		margin-top: 11%;
 	}
 }
 
