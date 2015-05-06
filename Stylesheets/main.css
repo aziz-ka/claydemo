@@ -10,6 +10,9 @@ body {
 	margin: 0 auto;
 	color: #777;
 }
+a  {
+	text-decoration: none;
+}
 main {
 	padding: 0 10%;
 }
@@ -27,6 +30,11 @@ header {
 }
 nav > ul {
 	margin: 0;
+}
+h1 a, h1 a:visited {
+	color: #666;
+	text-decoration: none;
+	font-family: miama;
 }
 .logo {
 /*	float: left;*/
@@ -51,7 +59,9 @@ header ul li a {
 	-moz-transition: border-bottom, ease-out;
 	-o-transition: border-bottom, ease-out;
 	transition: border-bottom, ease-out;
-	border-bottom: 1px dotted rgba(255,255,255,0);
+	border: 1px solid rgba(255,255,255,0);
+	border-radius: 5px;
+	padding: 0 5px;
 }
 header ul li a:hover {
 	color: #444;
@@ -59,7 +69,13 @@ header ul li a:hover {
 	-moz-transition: border-bottom, ease-out, .8s;
 	-o-transition: border-bottom, ease-out, .8s;
 	transition: border-bottom, ease-out, .8s;
-	border-bottom: 1px dotted #4bb553;
+	border: 1px solid rgba(75,181,83,.5);
+	border-radius: 5px;
+}
+.dropdown li a, .dropdown li a:hover {
+	border-bottom: none;
+	border-top: none;
+	padding: 0 10px;
 }
 .current {
 	color: #444;
@@ -82,6 +98,7 @@ ul li {
 }
 .dropdown {
 	margin-top: 1.5%;
+	padding: .4% 0 10%;
 	background-color: rgba(255,255,255,1);
 	list-style: none;
 	position: absolute;
@@ -103,7 +120,14 @@ ul li {
 }
 .dropdown li {
 	display: block;
-	line-height: 150%;
+/*	line-height: 150%;*/
+}
+.crosslinks, .crosslinks:visited {
+	color: #000;
+	border-bottom: 1px dashed #eee;
+}
+.crosslinks:hover {
+	border-bottom: 1px dashed #aaa;
 }
 .social li a img {
 	width: 40px;
@@ -140,11 +164,6 @@ footer {
 
 /***** SHOP CSS *****/
 
-.fa-globe {
-	font-size: 3em;
-	color: #4b9f53;
-	margin: 5% auto 0;
-}
 .inter-buyer {
 	font-size: 1.5em;
 }
@@ -152,7 +171,6 @@ footer {
 	text-decoration: none;
 	color: #4b9f53;
 }
-
 /***** SHOP CSS *****/
 
 @media (max-width: 800px) {
@@ -234,7 +252,7 @@ footer {
 		border-bottom: 1px solid #ddd;
 	}
 	nav ul li a:hover {
-		border: none;
+		border: 1px solid rgba(255,255,255,0);
 	}
 	.icon {
 		width: 15%;
@@ -281,6 +299,7 @@ footer {
 	}
 	.dropdown {
 		font-size: 80%;
+		padding: 0;
 		margin-top: inherit;
 		background-color: inherit;
 		position: inherit;

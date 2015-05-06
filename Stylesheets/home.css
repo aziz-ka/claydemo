@@ -12,11 +12,11 @@ h2 {
 .feedback {
 	margin-top: 10%;
 }
-.fa-bullhorn {
+/*.fa-bullhorn {
 	font-size: 1.25em;
 	color: #4bb553;
 	padding-left: .5em;
-}
+}*/
 .feedback h3 {
 	margin-bottom: 5%;
 	font-size: 1.5em;
@@ -34,9 +34,6 @@ h2 {
 	display: block;
 	position: absolute;
 	opacity: .5;
-}
-a {
-	text-decoration: none;
 }
 .feedback a, .feedback a:hover, .feedback a:visited {
 	color: #f00;
